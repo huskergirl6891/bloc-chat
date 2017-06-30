@@ -1,4 +1,10 @@
-<h1>Home Page</h1>
-<body>
-  <div ng-repeat="room in home.room">{{room.$value}}</div>
-</body>
+<div class="bloc-chat container">
+  <div class="column rooms"> <!-- Room list -->
+    <h1 class="main-title">Bloc Chat</h1>
+    <div class="room-list" ng-repeat="room in home.room">{{room.$value}}</div>
+  </div>
+  <div class="column chat-area"> <!-- Messaging area -->
+    <h1 class="chat-title">Messages</h1>
+    <div class="chat-list">message1</div>
+  </div>
+</div>

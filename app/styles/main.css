@@ -1,0 +1,53 @@
+html {
+  height: 100%;
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Open Sans';
+  color: black;
+  min-height: 100%;
+  padding-bottom: 200px;
+
+}
+
+.bloc-chat {
+  position: relative;
+  display: table;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+
+.column {
+  display: table-cell;
+  position: relative;
+  padding: 2rem;
+  text-align: left;
+}
+
+.rooms {
+  width: 25%;
+  background-color: rgb(211,211,211);
+}
+
+.chat-area {
+  width: 75%;
+}
+
+.main-title {
+  position: relative;                       /* positioning will be explained in a resource */
+  width: 100%;                    /* makes sure the title inhabits the full width of its container */
+  font-size: 2rem;                /* specifies the size of the font in root em units */
+  font-weight: 400;               /* makes the font thinner or lighter weight */
+}
+
+.room-list {
+  position: relative;                       /* positioning will be explained in a resource */
+  width: 100%;                    /* makes sure the title inhabits the full width of its container */
+  font-size: 1rem;                /* specifies the size of the font in root em units */
+  font-weight: 300;               /* makes the font thinner or lighter weight */
+  padding: 0.5rem;
+}
