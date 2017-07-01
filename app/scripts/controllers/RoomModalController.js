@@ -1,7 +1,7 @@
 (function() {
     function RoomModalController($uibModal) {
+
       var $ctrl = this;
-      $ctrl.items = '';
 
       $ctrl.open = function () {
 
@@ -17,8 +17,8 @@
           }
         });
 
-        modalInstance.result.then(function (selectedItem) {
-          $ctrl.selected = selectedItem;
+        modalInstance.result.then(function (roomname) {
+          $ctrl.roomname = roomname;
         }, function () {
           console.log('Modal dismissed at: ' + new Date());
         });

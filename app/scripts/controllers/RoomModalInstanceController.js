@@ -1,11 +1,18 @@
 (function() {
-    function RoomModalInstanceController($uibModalInstance, items) {
+    function RoomModalInstanceController($uibModalInstance) {
       var $ctrl = this;
-      $ctrl.items = items;
+      $ctrl.text = 'newroom';
+      $ctrl.newroom = '';
 
       $ctrl.ok = function () {
-        console.log("value of items = " + $ctrl.items);
-        $uibModalInstance.close($ctrl.items);
+        $ctrl.submit = function() {
+          if ($ctrl.text) {
+            $ctrl.newroom = $ctrl.text;
+            $ctrl.text = '';
+          }
+        };
+        console.log("value of items = " + $ctrl.newroom);
+        $uibModalInstance.close($ctrl.newroom);
       };
 
       $ctrl.cancel = function () {
@@ -15,5 +22,5 @@
 
     angular
         .module('blocChat')
-        .controller('RoomModalInstanceController', ['$uibModalInstance', 'items', RoomModalInstanceController]);
+        .controller('RoomModalInstanceController', ['$uibModalInstance', RoomModalInstanceController]);
 })();
