@@ -5,10 +5,8 @@
                 <h3 class="modal-title" id="modal-title">Create new room</h3>
             </div>
             <div class="modal-body" id="modal-body">
-              <form ng-submit="$ctrl.submit()">
                 <label>Enter a room name</label>
-                <input ng-model="text" />
-              </form>
+                <input ng-model="$ctrl.text" />
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
