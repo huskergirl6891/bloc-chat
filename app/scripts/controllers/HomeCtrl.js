@@ -1,6 +1,7 @@
 (function() {
     function HomeCtrl(Room) {
-      this.room = Room.all;
+      this.roomList = Room.all;
+      //this.room = Room.add("test");
     }
 
     angular

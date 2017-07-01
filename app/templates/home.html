@@ -1,4 +1,19 @@
-<h1>Home Page</h1>
-<body>
-  <div ng-repeat="room in home.room">{{room.$value}}</div>
-</body>
+<h1>Bloc Chat</h1>
+  <div ng-controller="RoomModalController as $ctrl" class="modal-demo">
+    <script type="text/ng-template" id="modal.html">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">Create new room</h3>
+            </div>
+            <div class="modal-body" id="modal-body">
+              <label>Enter a room name</label>
+              <input ng-model="items" />
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+                <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+            </div>
+    </script>
+
+    <button type="button" class="btn btn-default" ng-click="$ctrl.open()">New room</button>
+    <div ng-repeat="room in home.roomList">{{room.$value}}</div>
+  </div>

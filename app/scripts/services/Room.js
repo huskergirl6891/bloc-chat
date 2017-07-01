@@ -6,6 +6,15 @@
 
     Room.all = rooms;
 
+    Room.add = function(room) {
+        //Use the firebase method $add here
+        Room.all.$add(room).then(function(ref) {
+          var id = ref.key;
+          console.log("added record with id " + id);
+          Room.all.$indexFor(id); // returns location in the array
+        });
+    }
+
     return Room;
   }
 
