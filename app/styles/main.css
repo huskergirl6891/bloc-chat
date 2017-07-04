@@ -1,0 +1,73 @@
+html {
+  height: 100%;
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Open Sans';
+  min-height: 100%;
+  padding-bottom: 200px;
+}
+
+h1 {
+  margin: 0;
+  display: inline-block;
+  margin: 2rem;
+  text-align: left;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.main {
+  position: relative;
+}
+
+.area {
+  position: relative;
+  padding: 2rem;
+  text-align: left;
+  opacity: 1;
+}
+
+.left {
+  width: 25%;
+  background-color: rgb(192,192,192);
+}
+
+.right {
+  width: 75%
+}
+
+.rooms {
+  text-align: left;
+}
+
+.rooms:hover {
+  cursor: pointer;
+}
+
+.column {
+  float: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.message-table {
+  width: 100%;
+}
+
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}

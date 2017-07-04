@@ -1,8 +1,9 @@
 (function() {
-  function Room($firebaseArray) {
+  function Room($firebaseArray, Message) {
     var Room = {};
     var ref = firebase.database().ref().child("rooms");
     var rooms = $firebaseArray(ref);
+    var selectedRoom = rooms[0];
 
     Room.all = rooms;
 
@@ -13,12 +14,17 @@
           console.log("added record with id " + id);
           Room.all.$indexFor(id); // returns location in the array
         });
-    }
+    };
+
+    Room.setRoom = function(room) {
+         HomeCtrl.activeRoom = room;
+         Message.getByRoomId(HomeCtrl.activeRoom.$id);
+    };
 
     return Room;
   }
 
   angular
     .module('blocChat')
-    .factory('Room', ['$firebaseArray', Room]);
+    .factory('Room', ['$firebaseArray', 'Message', Room]);
 })();
