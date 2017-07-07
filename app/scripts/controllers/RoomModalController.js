@@ -9,7 +9,6 @@
           templateUrl: 'modal.html',
           controller: 'RoomModalInstanceController',
           controllerAs: '$ctrl',
-          background: true,
           resolve: {
             items: function () {
               return $ctrl.items;
