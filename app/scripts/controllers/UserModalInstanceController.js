@@ -1,15 +1,20 @@
 (function() {
-    function UserModalInstanceController($uibModalInstance) {
-      var $ctrl = this;
+    function UserModalInstanceController($uibModalInstance, $cookies) {
+      var $user = this;
 
-      $ctrl.ok = function () {
+      $user.ok = function () {
 
-        $uibModalInstance.close($cookies.put('blocChatCurrentUser', '$user.text'));
+        var tempName = $user.text;
+
+        if (tempName !== undefined && tempName !== '') {
+          $uibModalInstance.close($cookies.put('blocChatCurrentUser', $user.text));
+        }
+
       };
 
     }
 
     angular
         .module('blocChat')
-        .controller('UserModalInstanceController', ['$uibModalInstance', UserModalInstanceController]);
+        .controller('UserModalInstanceController', ['$uibModalInstance', '$cookies', UserModalInstanceController]);
 })();

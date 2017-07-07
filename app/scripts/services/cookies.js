@@ -4,9 +4,10 @@
     if (!currentUser || currentUser === '') {
       $uibModal.open({
         // Modal configuration object properties
-          templateUrl: 'userModal.html',
+          templateUrl: '/templates/usernameModal.html',
           controller: 'UserModalInstanceController',
-          controllerAs: '$user'
+          controllerAs: '$user',
+          backdrop: 'static'
       })
     }
   }

@@ -1,14 +1,17 @@
-<div ng-controller="ModalDemoCtrl as $user" class="modal-demo">
-  <script type="text/ng-template" id="userModal.html">
-    <div class="modal-header">
-      <h3 class="modal-title" id="modal-title">Set a username</h3>
-    </div>
-    <div class="modal-body" id="modal-body">
-      <label>This name will appear when you send messages</label>
-      <input ng-model="$user.text">
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-primary" type="button" ng-click="$user.ok()">Set username</button>
-    </div>
-  </script>
+<div>
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Set a username</h3>
+  </div>
+  <div class="modal-body" id="modal-body">
+    <form name="modalForm" role="form" id="newModalForm">
+      <div class="form-group">
+        <label class="control-label">This name will appear when you send messages</label>
+        <input name="modalInput" type="text" class="form-control" id="uName" name="uName" required ng-model="$user.text" />
+        <span ng-show="modalForm.modalInput.$error.required" class="help-block">Input is required.</span>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-success" id="btnSaveIt" ng-click="$user.ok()">Set username</button>
+  </div>
 </div>
