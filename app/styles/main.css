@@ -13,6 +13,24 @@
   padding-bottom: 9999px;
 }
 
+#message-entry {
+  position: fixed;
+  bottom: 0;
+}
+
+#add-room-button {
+  display: inline;
+}
+
+#message-input {
+  width: 1000px;
+  padding: 10px;
+}
+
+#room-list {
+  margin-top: 10px;
+}
+
 
 html, body {
         height: 100%;

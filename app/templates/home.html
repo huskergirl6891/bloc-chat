@@ -3,7 +3,7 @@
     <div class="col-lg-3" id="room-list" ng-controller="RoomModalController as $ctrl" class="modal-demo">
         <div>
           <h1>Bloc Chat</h1>
-          <button type="button" class="btn btn-default" ng-click="$ctrl.open()">New room</button>
+          <button type="button" class="btn btn-default" id="add-room-button" ng-click="$ctrl.open()">New room</button>
         </div>
         <div>
           <script type="text/ng-template" id="modal.html">
@@ -20,7 +20,7 @@
             </div>
           </script>
         </div>
-        <div ng-repeat="room in home.roomList" ng-mouseover="hovered = true" ng-mouseleave="hovered = false" ng-click="home.activeRoom=room; home.message.getByRoomId(room.$id)">
+        <div id="room-list" ng-repeat="room in home.roomList" ng-mouseover="hovered = true" ng-mouseleave="hovered = false" ng-click="home.activeRoom=room; home.message.getByRoomId(room.$id)">
           <a>{{room.$value}}</a>
         </div>
     </div>
@@ -33,7 +33,7 @@
         </tr>
       </table>
       <div id="message-entry">
-        <input ng-model="home.message.newMessage.content" placeholder="Write your message here...">
+        <input ng-model="home.message.newMessage.content" placeholder="Write your message here..." id="message-input">
         <button class="btn btn-primary" type="button" ng-click="home.message.newMessage.roomID=home.activeRoom.$id; home.message.send(home.message.newMessage); home.message.getByRoomId(home.activeRoom.$id)">Send</button>
       </div>
     </div>
