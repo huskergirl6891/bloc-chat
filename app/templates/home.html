@@ -1,8 +1,8 @@
 <section class="container-fluid">
   <div class="row" id="row1">
-    <div class="col-lg-3" id="room-list" ng-controller="RoomModalController as $ctrl" class="modal-demo">
+    <div class="col-lg-3" id="room-area" ng-controller="RoomModalController as $ctrl" class="modal-demo">
         <div>
-          <h1>Bloc Chat</h1>
+          <div id="title"><h1>Bloc Chat</h1></div>
           <button type="button" class="btn btn-default" id="add-room-button" ng-click="$ctrl.open()">New room</button>
         </div>
         <div>
@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="col-lg-9 pull-left" id="message-area">
-      <h2>{{ home.activeRoom.$value }}</h2>
+      <h3>{{ home.activeRoom.$value }}</h3>
       <table class="table table-striped table-condensed">
         <tr ng-repeat="message in home.message.list">
           <td><strong>{{ message.username }}</strong><br>{{ message.content }}</td>

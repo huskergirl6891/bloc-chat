@@ -1,16 +1,22 @@
-#room-list {
+#room-area {
   background-color: rgb(192,192,192);
-  height: 100%
+  height: 100vh;
+  text-align: left;
+  padding-left: 40px;
+  padding-top: 20px;
 }
 
-.container {
-  min-height: 100%;
-  overflow: hidden;
+#room-list {
+  padding: 5px;
+  color: rgb(128,128,128);
 }
 
-#message-area, #room-list {
-  margin-bottom: -9999px;
-  padding-bottom: 9999px;
+#room-list:hover {
+  cursor: pointer;
+}
+
+#message-area {
+  padding: 10px;
 }
 
 #message-entry {
@@ -19,7 +25,8 @@
 }
 
 #add-room-button {
-  display: inline;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 #message-input {
@@ -27,11 +34,8 @@
   padding: 10px;
 }
 
-#room-list {
-  margin-top: 10px;
-}
-
-
-html, body {
-        height: 100%;
+#title {
+  display:inline-block;
+  margin-right: 40px;
+  vertical-align: middle;
 }
