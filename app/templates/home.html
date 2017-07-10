@@ -21,21 +21,23 @@
           </script>
         </div>
         <div id="room-list" ng-repeat="room in home.roomList" ng-mouseover="hovered = true" ng-mouseleave="hovered = false" ng-click="home.activeRoom=room; home.message.getByRoomId(room.$id)">
-          <a>{{room.$value}}</a>
+          <a class="room">{{room.$value}}</a>
         </div>
     </div>
     <div class="col-lg-9 pull-left" id="message-area">
-      <h3>{{ home.activeRoom.$value }}</h3>
+      <h3 id="room-name">{{ home.activeRoom.$value }}</h3>
       <table class="table table-striped table-condensed">
         <tr ng-repeat="message in home.message.list">
-          <td><strong>{{ message.username }}</strong><br>{{ message.content }}</td>
-          <td>{{ message.sentAt }}</td>
+          <td id="username"><strong>{{ message.username }}</strong><br>{{ message.content }}</td>
+          <td id="time">{{ message.sentAt }}</td>
         </tr>
       </table>
-      <div id="message-entry">
-        <input ng-model="home.message.newMessage.content" placeholder="Write your message here..." id="message-input">
-        <button class="btn btn-primary" type="button" ng-click="home.message.newMessage.roomID=home.activeRoom.$id; home.message.send(home.message.newMessage); home.message.getByRoomId(home.activeRoom.$id)">Send</button>
-      </div>
+      <form>
+        <div id="message-entry">
+          <div id="input-div"><input ng-model="home.message.newMessage.content" placeholder="Write your message here..." id="message-input"></div>
+          <button class="btn btn-primary" type="button" id="send-btn" ng-click="home.message.newMessage.roomID=home.activeRoom.$id; home.message.send(home.message.newMessage); home.message.getByRoomId(home.activeRoom.$id)">Send</button>
+        </div>
+      </form>
     </div>
   </div>
 </section>
